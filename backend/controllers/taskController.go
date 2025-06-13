@@ -3,6 +3,7 @@ package controllers
 import (
 	"MyNewApp/backend/database"
 	"MyNewApp/backend/models"
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -21,6 +22,7 @@ func CreateTask(c *gin.Context) {
 func GetTasks(c *gin.Context) {
 	var tasks []models.Task
 	database.DB.Order("created_at desc").Find(&tasks)
+	fmt.Println(tasks)
 	c.JSON(http.StatusOK, tasks)
 }
 
