@@ -7,7 +7,7 @@
 #       dockerfile: Dockerfile
 #     container_name: mynewapp-backend
 #     ports:
-#       - "8080:8080"
+#       - "5000:5000"
 #     environment:
 #       DB_HOST: db
 #       DB_PORT: 5432
@@ -41,7 +41,7 @@ services:
       dockerfile: Dockerfile
     container_name: mynewapp-backend
     ports:
-      - "8080:8080"
+      - "5000:5000"
     depends_on:
       - db
     # ⚠️ Removed environment section (you’re not using env vars in Go)
